@@ -1,0 +1,80 @@
+dapplogix
+ usecases of BC
+	 hirestart - recruiter platform
+	 cutshort hiring period
+	 
+	if p , odd = p/1-p
+	logit p = logit(p/1-p) - graph of odds
+	used in sigmoid function (reverse of logit)
+	sigmoid(logit p) = p
+	sigmoid used in binary classification & logistic regression
+	
+	y = mx+b (m - slope, single variable, scalar)
+	z = f(x), y = f(x) 
+	chain rule for partial derivatives
+	for multivariate - gradient (vector)
+	
+what is tensorflow - 
+	framework
+	same can be achieved with numpy,
+	tf - simplifies operations
+
+sigmoid vs softmax
+	softmax can do multiclass classification
+	sigmoid only for binary
+
+h5py - read datasets
+
+tensor - in mathematics multidimensional variable
+in NN nodes are tensors
+
+placeholder - puts vaiables in memory, and puts it into compuation graph
+
+W = tf.constant(np.random.randn(4,3), name="W")
+    X = tf.constant(np.random.randn(3,1), name="X")
+    b = tf.constant(np.random.randn(4,1), name="b")
+    Y = tf.add(tf.matmul(WX), b)
+
+# Create a placeholder for x. Name it 'x'.
+x = tf.placeholder(tf.float32, name="x")
+sigmoid = tf.sigmoid(x)
+with tf.session() as sess:
+        result = sess.run(sigmoid, feed_dict={x})
+
+logloss - cost function
+
+softmax vs softmax function
+logits - value of last layer
+
+# GRADED FUNCTION: cos
+z = tf.placeholder(tf.int32, name="z")
+y = tf.placeholder(tf.int32, name="y")
+cost = tf.nn.sigmoid_cross_entropy_with_logits(logits=z, labels=y)
+sess = with tf.session()           
+cost = sess.run(sigmoid, feed_dict={cost})
+
+# GRADED FUNCTION: one_hot_matrix
+one hot encoding - objective is to classification of true/false (binary classification)
+C = tf.constant(6, name="C")
+one_hot_matrix = tf.one_hot(lables, C, axis=0)
+sess = tf.session()
+one_hot = sess.run(one_hot_matrix)
+
+# GRADED FUNCTION: ones
+sigmoid (slower) vs relu (faster)
+
+relu used in initial stages for activation
+softmax used in last layer for activation
+layers
+	LINEAR -> RELU -> LINEAR -> RELU -> LINEAR -> SOFTMAX
+
+no.of hidden layers calculated on trail and error basis based on the accuracy and cost of increasing the layers
+
+forward propogation -> compute cost -> backward propagation
+cost - for difference between actual and predicted
+
+building the model
+
+exercise
+https://www.kaggle.com/datamunge/sign-language-mnist/
+
