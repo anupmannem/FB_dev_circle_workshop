@@ -1,0 +1,4 @@
+conda create -n tensorflow_env tensorflow
+
+conda activate tensorflow_env
+conda deactivate
